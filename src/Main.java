@@ -19,10 +19,33 @@ public class Main {
         dll.insert(70, 4);
         dll.display();
         dll.insert(80, 8);
+        dll.insert(70, 2);
+        dll.display();
+        dll.insert(70, 6);
+        dll.display();
         dll.display();
         dll.insert(90, 10);
         dll.display();
 
+
+
+//        dll.deleteByPosition(1);
+//        dll.display();
+//        dll.deleteByPosition(4);
+//        dll.display();
+//        dll.deleteByPosition(6);
+//        dll.display();
+//        dll.deleteByPosition(6);
+//        dll.display();
+
+        dll.deleteByVal(60);
+        dll.display();
+        dll.deleteByVal(30);
+        dll.display();
+        dll.deleteByVal(80);
+        dll.display();
+        dll.deleteByVal(60);
+        dll.display();
 
 
     }

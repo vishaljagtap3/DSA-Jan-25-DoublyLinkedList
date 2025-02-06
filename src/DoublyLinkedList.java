@@ -77,4 +77,64 @@ public class DoublyLinkedList {
         }
         System.out.println();
     }
+
+    public boolean deleteByPosition(int position) {
+        if(head == null || position < 1) {
+            return false;
+        }
+
+        if(position == 1) {
+            head = head.getNext();
+            if(head != null) {
+                head.setPrev(null);
+            }
+            return true;
+        }
+
+        //locate the node at position
+        Node del = head;
+        for(int i = 1; i < position; i++) {
+            del = del.getNext();
+            if(del == null) {
+                return false;
+            }
+        }
+
+        del.getPrev().setNext(del.getNext());
+        if(del.getNext() != null) {
+            del.getNext().setPrev(del.getPrev());
+        }
+
+        return true;
+    }
+
+    public boolean deleteByVal(int data) {
+        if(head == null) {
+            return false;
+        }
+
+        if(head.getData() == data) {
+            //return deleteByPosition(1);
+            head = head.getNext();
+            if(head != null) {
+                head.setPrev(null);
+            }
+            return true;
+        }
+
+        //locate the node to be deleted
+        Node del = head;
+        while(del.getData() != data) {
+            del = del.getNext();
+            if(del == null) {
+                return false;
+            }
+        }
+
+        del.getPrev().setNext(del.getNext());
+        if(del.getNext() != null) {
+            del.getNext().setPrev(del.getPrev());
+        }
+        return true;
+    }
 }
